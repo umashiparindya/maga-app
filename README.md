@@ -18,7 +18,6 @@ from the repository root:
 flutter pub get
 flutter analyze
 flutter test
-flutter test integration_test
 flutter build apk --debug
 ```
 
@@ -30,6 +29,9 @@ start a supported emulator and use:
 flutter devices
 flutter run -d <device-id>
 ```
+
+With an Android emulator or device connected, run the end-to-end flow with
+`flutter test integration_test`.
 
 The technical package identity is `mashi_smoke` and the Android application ID
 is `com.example.mashi_smoke`. Keep those identifiers unchanged unless the
@@ -62,9 +64,11 @@ flutter pub get
 dart format --output=none --set-exit-if-changed lib test integration_test
 flutter analyze
 flutter test
-flutter test integration_test
 flutter build apk --debug
 ```
+
+Run `flutter test integration_test` separately when an Android emulator or
+device is connected.
 
 Read AGENTS.md before making any change. Do not treat this as a generic Flutter
 starter app. The implementation must stay deterministic, rule-based, and aligned
